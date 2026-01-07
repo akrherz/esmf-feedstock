@@ -1,5 +1,5 @@
-{% set version = "8.9.0" %}
-{% set build = 3 %}
+{% set version = "8.9.1" %}
+{% set build = 0 %}
 
 # ensure mpi is defined (needed for conda-smithy recipe-lint)
 {% set mpi = mpi or 'nompi' %}
@@ -15,7 +15,7 @@ package:
 
 source:
   url: https://github.com/esmf-org/esmf/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 586e0101d76ff9842d9ad43567fae50317ee794d80293430d9f1847dec0eefa5
+  sha256: e3fafd0c057bf1c3b4c41c997b392016d621b1f1a7c601355c325a7f58425d78
   patches:
     # remove these very long running tests only for aarch64 nompi (which is hanging)
     - 0001-remove-long-running-tests-aarch64.patch  # [aarch64 and mpi == 'nompi']
